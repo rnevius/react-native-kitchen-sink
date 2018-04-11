@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, DrawerLayoutAndroid, Text, View } from 'react-native';
+import { ActivityIndicator, Button, DrawerLayoutAndroid, Text, View } from 'react-native';
 
 export default class App extends React.Component {
   render() {
@@ -22,7 +22,14 @@ export default class App extends React.Component {
             <Text style={{fontSize: 16, marginBottom: 25}}>
               Swipe right, to open the drawer. Or...
             </Text>
-            <Button title='Open with a Button' onPress={() => this.drawer.openDrawer()} />
+            <Button 
+              title='Open with a Button' 
+              onPress={() => this.drawer.openDrawer()} />
+            <View style={{flexDirection: 'row', marginTop: 25}}>
+              <ActivityIndicator size='large' color='#0000ff' />
+              <ActivityIndicator size='small' color='#00ff00' />
+              <ActivityIndicator size={25} color='#0000ff' />
+            </View>
           </View>
         </DrawerLayoutAndroid>
       </View>
